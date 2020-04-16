@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name = "isaacb_project"
+=======
+name = "{{project-name}}"
+>>>>>>> 2d8f78217091122ce4897a98bbb49eebe39ddb5d
 type = "javascript"
 account_id = ""
 workers_dev = true

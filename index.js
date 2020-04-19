@@ -18,9 +18,11 @@ async function handleRequest(request) {
   // Make a fetch request to a random URL
   luckyUrl = urls[Math.floor(Math.random() * urls.length)];
 
-  promise = fetch(luckyUrl);
+  res = await fetch(luckyUrl);
 
-  promise.resolve(Response());
-
-  return new Response(fetch(luckyUrl));
+  return new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers: res.headers
+  });
 }

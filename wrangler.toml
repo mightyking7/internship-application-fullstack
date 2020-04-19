@@ -1,6 +1,6 @@
 name = "isaacb_project"
-type = "javascript"
-account_id = ""
+type = "webpack"
+account_id = "637adf1345864dc168585cae9677190d"
 workers_dev = true
 route = ""
 zone_id = ""

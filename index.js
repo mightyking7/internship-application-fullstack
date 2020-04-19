@@ -2,23 +2,26 @@ addEventListener("fetch", event => {
   event.respondWith(handleRequest(event.request));
 });
 /**
- * Respond with hello worker text
+ * Return response from request to a variant
  * @param {Request} request
  */
 async function handleRequest(request) {
-  const URL = "https://cfw-takehome.developers.workers.dev/api/variants";
+  // query endpoint
+  const endpoint = "https://cfw-takehome.developers.workers.dev/api/variants";
 
   // fetch url and save results
-  urls = await fetch(URL)
+  let urls = await fetch(endpoint)
     .then(res => {
       return res.json();
     })
     .then(data => data.variants);
 
-  // Make a fetch request to a random URL
-  luckyUrl = urls[Math.floor(Math.random() * urls.length)];
+  // make a request to a random URL
+  let luckyUrl = urls[Math.floor(Math.random() * urls.length)];
 
-  res = await fetch(luckyUrl);
+  let res = await fetch(luckyUrl);
+
+  // return response as if it was loaded directly
 
   return new Response(res.body, {
     status: res.status,
